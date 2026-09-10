@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SmartQuote | Compare supplier quotations and issue your purchase order</title>
+  <meta name="description" content="SaaS platform that reads supplier quotations from PDF files, checks them against your technical and commercial criteria, and delivers a traceable recommendation and a ready-to-approve purchase order for poultry operations.">
+  <meta name="keywords" content="quotation comparison, procurement software, poultry industry, supplier evaluation, purchase order, SaaS">
+  <meta name="author" content="SmartQuote">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/">
+  <link rel="alternate" hreflang="en-US" href="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/">
+  <link rel="alternate" hreflang="es-419" href="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/es/">
+  <link rel="alternate" hreflang="x-default" href="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SmartQuote">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_419">
+  <meta property="og:title" content="SmartQuote | Traceable purchase decisions for poultry operations">
+  <meta property="og:description" content="Three quotations, three formats, one decision you have to justify. SmartQuote reads them, scores them and issues the order.">
+  <meta property="og:url" content="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/">
+  <meta property="og:image" content="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/assets/img/og-smartquote.png">
+  <meta property="og:image:alt" content="SmartQuote quotation comparison chart">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SmartQuote | Compare quotations and issue purchase orders">
+  <meta name="twitter:description" content="Automated analysis of PDF quotations for poultry supply procurement.">
+  <meta name="twitter:image" content="https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/assets/img/og-smartquote.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SmartQuote",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "SaaS platform for comparative evaluation of supplier quotations in poultry production companies.",
+    "inLanguage": ["en-US", "es-419"],
+    "offers": { "@type": "Offer", "category": "Subscription" }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to main content</a>
+
+  <!-- 1 · Navigation -->
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="SmartQuote">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-bar brand-bar--s"></span>
+          <span class="brand-bar brand-bar--m"></span>
+          <span class="brand-bar brand-bar--l"></span>
+        </span>
+        <span class="brand-name">SmartQuote</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="nav.menu">Open menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Main">
+        <a href="#simulator" data-i18n="nav.try">Try it</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#team" data-i18n="nav.team">For your team</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <div class="lang-switch" role="group" data-i18n-aria-label="nav.language">
+          <button type="button" data-lang="en" class="is-active">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <a class="btn btn-invert nav-cta" href="#demo" data-i18n="cta.demo">Request a demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 2 · Hero: the three quotations as they actually arrive -->
+    <section class="hero" id="top">
+      <div class="shell">
+        <p class="hero-kicker" data-i18n="hero.kicker">Poultry supply procurement</p>
+        <h1 class="hero-title">
+          <span data-i18n="hero.l1">Three quotations.</span>
+          <span data-i18n="hero.l2">Three formats.</span>
+          <span class="hero-title-end" data-i18n="hero.l3">One decision you have to justify.</span>
+        </h1>
+
+        <div class="hero-switch" role="group" data-i18n-aria-label="hero.switchLabel">
+          <button type="button" id="stateRaw" class="is-active" data-i18n="hero.raw">As they arrive</button>
+          <button type="button" id="stateSolved" data-i18n="hero.solved">After SmartQuote</button>
+        </div>
+
+        <div class="stage" id="stage" data-state="raw">
+
+          <!-- State A: three heterogeneous documents -->
+          <div class="papers" aria-hidden="false" id="papers">
+            <article class="paper paper--serif">
+              <header class="paper-head">
+                <strong>AVIPIENSOS S.A.C.</strong>
+                <span>RUC 20512334781</span>
+              </header>
+              <p class="paper-doc">COTIZACIÓN N° 4471</p>
+              <dl class="paper-body">
+                <div><dt>Producto</dt><dd>Alimento inicio pellet</dd></div>
+                <div><dt>Cantidad</dt><dd>20 TM</dd></div>
+                <div><dt>Prot. cruda</dt><dd>18.5 %</dd></div>
+                <div><dt>Precio</dt><dd>S/ 1,980.00 x TM</dd></div>
+                <div><dt>Entrega</dt><dd>5 días útiles</dd></div>
+                <div><dt>Pago</dt><dd>Crédito 30 días</dd></div>
+              </dl>
+            </article>
+
+            <article class="paper paper--sans">
+              <header class="paper-head">
+                <strong>Nutriaves SRL</strong>
+                <span>Propuesta comercial 2026-0093</span>
+              </header>
+              <ul class="paper-list">
+                <li>Alimento balanceado de inicio, presentación en sacos de 50 kg</li>
+                <li>400 sacos · proteína cruda mínima 18.2%</li>
+                <li>Precio unitario por saco: S/ 94.50 (incl. IGV)</li>
+                <li>Despacho: una semana desde la orden</li>
+                <li>Condición: crédito 45 días</li>
+              </ul>
+            </article>
+
+            <article class="paper paper--mono">
+              <header class="paper-head">
+                <strong>GRANOS DEL NORTE SAC</strong>
+                <span>COTIZ. 887 / 2026</span>
+              </header>
+              <pre class="paper-pre">ITEM      ALIM INICIO
+CANT      20 TM
+PROT      17.4
+P.UNIT    1740.00 TM
+ENTREGA   4 DIAS
+PAGO      CONTADO</pre>
+              <p class="paper-stamp">escaneado</p>
+            </article>
+          </div>
+
+          <!-- State B: the resolved comparison -->
+          <div class="verdict" id="verdict" aria-hidden="true">
+            <div class="verdict-head">
+              <span class="verdict-title" data-i18n="verdict.title">Simulation #3</span>
+              <span class="verdict-meta" data-i18n="verdict.meta">PR-2026-0148 · Starter feed · 20 TM</span>
+            </div>
+            <table class="vtable">
+              <caption class="sr-only" data-i18n="verdict.caption">Normalised comparison of the three quotations</caption>
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="verdict.criterion">Criterion</th>
+                  <th scope="col">Avipiensos</th>
+                  <th scope="col">Nutriaves</th>
+                  <th scope="col">Granos N.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" data-i18n="verdict.protein">Crude protein ≥ 18%</th>
+                  <td><span class="state state-ok"><i class="ico" aria-hidden="true">✓</i><span data-i18n="state.meets">Meets</span></span></td>
+                  <td><span class="state state-ok"><i class="ico" aria-hidden="true">✓</i><span data-i18n="state.meets">Meets</span></span></td>
+                  <td><span class="state state-bad"><i class="ico" aria-hidden="true">✕</i><span data-i18n="state.fails">Does not meet</span></span></td>
+                </tr>
+                <tr>
+                  <th scope="row" data-i18n="verdict.unit">Normalised unit</th>
+                  <td class="num">S/ 1,980.00 / TM</td>
+                  <td class="num">S/ 1,890.00 / TM</td>
+                  <td class="num">S/ 1,740.00 / TM</td>
+                </tr>
+                <tr>
+                  <th scope="row" data-i18n="verdict.delivery">Delivery</th>
+                  <td class="num">5 <span data-i18n="unit.days">days</span></td>
+                  <td class="num">7 <span data-i18n="unit.days">days</span></td>
+                  <td class="num">4 <span data-i18n="unit.days">days</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="verdict-note" data-i18n="verdict.note">The second quotation priced by 50 kg sack. SmartQuote converted it to price per tonne so the three could be compared.</p>
+          </div>
+        </div>
+
+        <p class="hero-lead" data-i18n="hero.lead">Upload the PDFs your suppliers send. SmartQuote reads them, normalises the units, checks them against your technical requirements and shows which one wins — and what it would take to change that answer.</p>
+        <div class="hero-actions">
+          <a class="btn btn-invert" href="#simulator" data-i18n="cta.try">Try the comparison</a>
+          <a class="btn btn-ghost" href="#demo" data-i18n="cta.demo">Request a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · The stake -->
+    <section class="stake">
+      <div class="shell">
+        <p data-i18n="stake.line">Birds eat every day. A feed purchase cannot wait until somebody finishes the spreadsheet.</p>
+      </div>
+    </section>
+
+    <!-- 4 · Live simulator -->
+    <section class="section" id="simulator">
+      <div class="shell">
+        <h2 data-i18n="sim.title">Move the weights. Watch the winner change.</h2>
+        <p class="section-lead" data-i18n="sim.lead">These are the three quotations above. Set what matters to your operation and the ranking recalculates. This is the same rule the platform applies.</p>
+
+        <div class="sim">
+          <div class="sim-controls">
+            <div class="sim-block">
+              <h3 data-i18n="sim.mandatory">Mandatory requirement</h3>
+              <label class="sim-toggle">
+                <input type="checkbox" id="protRule" checked>
+                <span data-i18n="sim.protRule">Crude protein must be at least 18%</span>
+              </label>
+              <p class="sim-hint" id="protHint" data-i18n="sim.protHintOn">A quotation below specification is excluded, whatever it costs.</p>
+            </div>
+
+            <div class="sim-block">
+              <h3 data-i18n="sim.weights">Weighted criteria</h3>
+
+              <div class="slider">
+                <label for="wPrice"><span data-i18n="sim.price">Price</span><output id="wPriceOut">50%</output></label>
+                <input type="range" id="wPrice" min="0" max="100" step="5" value="50">
+              </div>
+              <div class="slider">
+                <label for="wDelivery"><span data-i18n="sim.delivery">Delivery time</span><output id="wDeliveryOut">30%</output></label>
+                <input type="range" id="wDelivery" min="0" max="100" step="5" value="30">
+              </div>
+              <div class="slider">
+                <label for="wPayment"><span data-i18n="sim.payment">Payment terms</span><output id="wPaymentOut">20%</output></label>
+                <input type="range" id="wPayment" min="0" max="100" step="5" value="20">
+              </div>
+
+              <button type="button" class="sim-reset" id="simReset" data-i18n="sim.reset">Reset weights</button>
+            </div>
+          </div>
+
+          <div class="sim-results">
+            <ol class="rank" id="rank" aria-live="polite"></ol>
+            <p class="sim-insight" id="simInsight"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · How the work comes in -->
+    <section class="section section-dark" id="how">
+      <div class="shell">
+        <h2 data-i18n="how.title">Where the platform sits in your process</h2>
+        <ol class="rail">
+          <li>
+            <h3 data-i18n="how.s1t">The farm registers what it needs</h3>
+            <p data-i18n="how.s1b">Production and animal health state the item, quantity, required date and technical conditions from the mobile app. Those conditions become the criteria everything else is measured against.</p>
+          </li>
+          <li>
+            <h3 data-i18n="how.s2t">You drop in the quotations</h3>
+            <p data-i18n="how.s2b">PDFs, however they arrived. Damaged or duplicated files are flagged one by one, without stopping the rest of the batch.</p>
+          </li>
+          <li>
+            <h3 data-i18n="how.s3t">The analysis reads and normalises</h3>
+            <p data-i18n="how.s3b">Prices per sack become prices per tonne. Every field comes back with a confidence level and a link to the exact line it was read from. What it cannot determine, it leaves empty.</p>
+          </li>
+          <li>
+            <h3 data-i18n="how.s4t">You verify, then simulate</h3>
+            <p data-i18n="how.s4b">Correct anything the analysis got wrong — the original value, your correction and your reason are all kept. Then run the comparison you just tried above.</p>
+          </li>
+          <li>
+            <h3 data-i18n="how.s5t">The order comes out linked</h3>
+            <p data-i18n="how.s5b">Generated from the awarded quotation and tied to the simulation behind it. If a criterion changes afterwards, the order is blocked until you run it again.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6 · Traceability, walkable -->
+    <section class="section" id="trace">
+      <div class="shell">
+        <h2 data-i18n="trace.title">Six months later, the answer is still there</h2>
+        <p class="section-lead" data-i18n="trace.lead">Select any link in the chain. Everything before it stays reachable, which is what turns a decision into something you can defend in an audit.</p>
+
+        <ol class="chain" id="chain">
+          <li><button type="button" data-step="1" data-i18n="trace.n1">Request</button></li>
+          <li><button type="button" data-step="2" data-i18n="trace.n2">Quotation</button></li>
+          <li><button type="button" data-step="3" data-i18n="trace.n3">Simulation</button></li>
+          <li><button type="button" data-step="4" class="is-active" data-i18n="trace.n4">Purchase order</button></li>
+        </ol>
+        <p class="chain-detail" id="chainDetail" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- 7 · Two teams -->
+    <section class="section section-alt" id="team">
+      <div class="shell">
+        <h2 data-i18n="team.title">Two teams, two ways in</h2>
+
+        <div class="split">
+          <div class="split-copy">
+            <h3 data-i18n="team.p1t">Procurement analysts and buying managers</h3>
+            <p data-i18n="team.p1b">On the web application: upload, verify what was detected, set the criteria, compare, decide and issue.</p>
+            <ul class="ticks">
+              <li data-i18n="team.p1l1">The criteria column stays in view while you scroll across suppliers</li>
+              <li data-i18n="team.p1l2">Every correction records who made it, when and why</li>
+              <li data-i18n="team.p1l3">Orders are blocked while a result is out of date</li>
+            </ul>
+          </div>
+          <div class="split-visual">
+            <div class="mini-table" aria-hidden="true">
+              <div class="mini-row"><span>Proteína cruda</span><span>18.5 %</span><span class="pill pill-warn">62%</span></div>
+              <div class="mini-row"><span>Cantidad</span><span>20 TM</span><span class="pill pill-ok">97%</span></div>
+              <div class="mini-row"><span>Moneda</span><span>PEN</span><span class="pill pill-ok">99%</span></div>
+              <div class="mini-row"><span>Plazo de entrega</span><span class="mini-empty">no resuelto</span><span class="pill pill-bad">—</span></div>
+            </div>
+            <p class="visual-note" data-i18n="team.v1">Detected data, with the two fields that need a human.</p>
+          </div>
+        </div>
+
+        <div class="split split-reverse">
+          <div class="split-copy">
+            <h3 data-i18n="team.p2t">Veterinarians, nutritionists and farm managers</h3>
+            <p data-i18n="team.p2b">On the mobile app: register a request from the shed, attach what supports it and follow it until the order is issued.</p>
+            <ul class="ticks">
+              <li data-i18n="team.p2l1">Technical requirements stated once, applied to every quotation</li>
+              <li data-i18n="team.p2l2">Status and history, showing who acts next</li>
+              <li data-i18n="team.p2l3">Notification when the supplier is awarded</li>
+            </ul>
+          </div>
+          <div class="split-visual">
+            <div class="mini-phone" aria-hidden="true">
+              <div class="mini-req">
+                <span class="mini-code">PR-2026-0148</span>
+                <span class="mini-item">Alimento de inicio · 20 TM</span>
+                <span class="mini-status">En evaluación</span>
+              </div>
+              <div class="mini-req">
+                <span class="mini-code">PR-2026-0151</span>
+                <span class="mini-item">Vacuna Newcastle · 40,000 dosis</span>
+                <span class="mini-status mini-status--ok">Orden emitida</span>
+              </div>
+            </div>
+            <p class="visual-note" data-i18n="team.v2">Requests followed from the farm, not by phone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Industry focus -->
+    <section class="strip">
+      <div class="shell strip-inner">
+        <h2 data-i18n="focus.title">Built for poultry supply, not for generic procurement</h2>
+        <ul class="focus-list">
+          <li data-i18n="focus.i1">Starter and grower feed</li>
+          <li data-i18n="focus.i2">Vaccines</li>
+          <li data-i18n="focus.i3">Veterinary medicines</li>
+          <li data-i18n="focus.i4">Packaging materials</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9 · Pricing -->
+    <section class="section" id="pricing">
+      <div class="shell">
+        <h2 data-i18n="price.title">Membership plans</h2>
+        <p class="section-lead" data-i18n="price.lead">Billed monthly. Every plan includes the web application, the mobile app and the full traceability chain.</p>
+
+        <div class="plans">
+          <article class="plan">
+            <h3 data-i18n="price.p1t">Single site</h3>
+            <p class="plan-price"><span class="plan-amount">USD 149</span><span class="plan-period" data-i18n="price.month">per month</span></p>
+            <ul>
+              <li data-i18n="price.p1l1">Up to 60 quotations analysed per month</li>
+              <li data-i18n="price.p1l2">3 procurement users, unlimited farm users</li>
+              <li data-i18n="price.p1l3">Criteria defined per request</li>
+            </ul>
+            <a class="btn btn-outline" href="#demo" data-i18n="cta.demo">Request a demo</a>
+          </article>
+
+          <article class="plan plan-featured">
+            <p class="plan-flag" data-i18n="price.flag">Most poultry operations start here</p>
+            <h3 data-i18n="price.p2t">Growth</h3>
+            <p class="plan-price"><span class="plan-amount">USD 390</span><span class="plan-period" data-i18n="price.month">per month</span></p>
+            <ul>
+              <li data-i18n="price.p2l1">Up to 300 quotations analysed per month</li>
+              <li data-i18n="price.p2l2">Unlimited users across both apps</li>
+              <li data-i18n="price.p2l3">Saved criteria templates per supply type</li>
+              <li data-i18n="price.p2l4">Version history of every evaluation scenario</li>
+            </ul>
+            <a class="btn btn-primary" href="#demo" data-i18n="cta.demo">Request a demo</a>
+          </article>
+
+          <article class="plan">
+            <h3 data-i18n="price.p3t">Multi-site</h3>
+            <p class="plan-price"><span class="plan-amount" data-i18n="price.custom">On request</span></p>
+            <ul>
+              <li data-i18n="price.p3l1">Several production sites under one account</li>
+              <li data-i18n="price.p3l2">Volume of quotations agreed per contract</li>
+              <li data-i18n="price.p3l3">Approval thresholds by amount and role</li>
+            </ul>
+            <a class="btn btn-outline" href="#demo" data-i18n="cta.talk">Talk to us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="shell shell-narrow">
+        <h2 data-i18n="faq.title">Questions we get asked</h2>
+
+        <label class="faq-search">
+          <span class="sr-only" data-i18n="faq.searchLabel">Filter questions</span>
+          <input type="search" id="faqSearch" data-i18n-placeholder="faq.searchPlaceholder" placeholder="Filter questions">
+        </label>
+
+        <div class="faq-list" id="faqList">
+          <details class="faq-item">
+            <summary data-i18n="faq.q1">What happens if the analysis reads a value wrong?</summary>
+            <p data-i18n="faq.a1">You correct it before the quotation enters a simulation. The platform keeps the original value, the corrected one, who changed it, when and why.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q2">Our suppliers send scanned quotations. Does that work?</summary>
+            <p data-i18n="faq.a2">A scan is read like any other PDF, but confidence levels tend to be lower and more fields come back for review. The platform tells you which ones instead of guessing.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q3">Does SmartQuote decide for us?</summary>
+            <p data-i18n="faq.a3">No. It structures the information and shows the reasoning behind a ranking. Approving a supplier and issuing the order stays with your procurement team.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q4">What if we want the cheaper quotation anyway?</summary>
+            <p data-i18n="faq.a4">You can award it. The platform records that it failed a mandatory criterion and the reason you gave, so the exception is documented instead of invisible.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q5">Does it replace our ERP?</summary>
+            <p data-i18n="faq.a5">No. SmartQuote covers the stretch between the request and the purchase order, which is where the comparison happens. The order it produces is meant to continue in your existing system.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q6">Where does supplier information end up?</summary>
+            <p data-i18n="faq.a6">Documents and extracted data stay inside your account. Access is limited to the users you register, and every correction and approval is attributed to a person.</p>
+          </details>
+        </div>
+
+        <p class="faq-empty" id="faqEmpty" hidden data-i18n="faq.empty">No question matches that text. Clear the filter to see all of them.</p>
+      </div>
+    </section>
+
+    <!-- 11 · Final call to action -->
+    <section class="cta-final" id="demo">
+      <div class="shell shell-narrow">
+        <h2 data-i18n="demo.title">Send us three real quotations</h2>
+        <p data-i18n="demo.lead">Same item, three suppliers, however they arrived. We will send back the comparison chart they produce and the reasoning behind it.</p>
+
+        <form class="demo-form" id="demoForm" novalidate>
+          <div class="field">
+            <label for="fName" data-i18n="demo.name">Full name</label>
+            <input type="text" id="fName" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="fEmail" data-i18n="demo.email">Work email</label>
+            <input type="email" id="fEmail" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="fCompany" data-i18n="demo.company">Company</label>
+            <input type="text" id="fCompany" name="company" autocomplete="organization" required>
+          </div>
+          <button class="btn btn-invert" type="submit" data-i18n="cta.demo">Request a demo</button>
+        </form>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12 · Footer -->
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="brand-name">SmartQuote</span>
+        <p data-i18n="footer.tagline">Comparative evaluation of supplier quotations for poultry production.</p>
+      </div>
+      <div class="footer-col">
+        <h2 data-i18n="footer.product">Product</h2>
+        <ul>
+          <li><a href="#simulator" data-i18n="nav.try">Try it</a></li>
+          <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 data-i18n="footer.company">Company</h2>
+        <ul>
+          <li><a href="#team" data-i18n="nav.team">For your team</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#demo" data-i18n="cta.demo">Request a demo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 data-i18n="footer.access">Access</h2>
+        <ul>
+          <li><a href="#" data-i18n="footer.signin">Sign in to the web app</a></li>
+          <li><a href="mailto:hola@smartquote.pe">hola@smartquote.pe</a></li>
+          <li>
+            <span class="footer-lang" role="group" data-i18n-aria-label="nav.language">
+              <button type="button" data-lang="en" class="is-active">English</button>
+              <button type="button" data-lang="es">Español</button>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell footer-legal">
+      <p data-i18n="footer.legal">SmartQuote · Universidad Peruana de Ciencias Aplicadas · Academic project 2026</p>
+    </div>
+  </footer>
+
+  <script src="assets/i18n.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

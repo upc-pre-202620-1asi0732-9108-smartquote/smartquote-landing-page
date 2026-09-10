@@ -29,8 +29,8 @@ The SmartQuote Project enables the digitalization of the procurement decision, r
 ![Parte 7](assets/images/p7.png)
 
 ### Links
-- Solution URL : https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/
-
+- Solution URL : [https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/
+](https://upc-pre-202620-1asi0732-9108-smartquote.github.io/smartquote-landing-page/)
 ### Build with
 - Semantic HTML5 markup
 - CSS Grid / Flexbox / Custom Properties

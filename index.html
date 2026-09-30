@@ -72,6 +72,7 @@
       <nav class="primary-nav" id="primaryNav" aria-label="Main">
         <a href="#simulator" data-i18n="nav.try">Try it</a>
         <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#video" data-i18n="nav.video">Video</a>
         <a href="#team" data-i18n="nav.team">For your team</a>
         <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
@@ -79,6 +80,7 @@
           <button type="button" data-lang="en" class="is-active">EN</button>
           <button type="button" data-lang="es">ES</button>
         </div>
+        <a class="nav-signin" data-webapp href="#" data-i18n="cta.webapp">Open the web app</a>
         <a class="btn btn-invert nav-cta" href="#demo" data-i18n="cta.demo">Request a demo</a>
       </nav>
     </div>
@@ -280,7 +282,45 @@ PAGO      CONTADO</pre>
       </div>
     </section>
 
-    <!-- 6 · Traceability, walkable -->
+    <!-- 6 · About the product video -->
+    <section class="section" id="video">
+      <div class="shell">
+        <h2 data-i18n="video.title">See the whole flow in three minutes</h2>
+        <p class="section-lead" data-i18n="video.lead">A walkthrough of a real purchase: three quotations uploaded, the detected data verified, the simulation run and the purchase order issued.</p>
+
+        <div class="video-frame" id="videoFrame">
+          <button type="button" class="video-play" id="videoPlay" data-i18n-aria-label="video.playAria">
+            <span class="video-play-icon" aria-hidden="true"></span>
+            <span class="video-play-label" data-i18n="video.play">Play the video</span>
+            <span class="video-play-meta" data-i18n="video.meta">About the product · 3 min · subtitles available</span>
+          </button>
+        </div>
+
+        <p class="video-fallback" id="videoFallback" hidden>
+          <span data-i18n="video.fallback">If the player does not load, you can open the video directly.</span>
+          <a id="videoDirect" href="#" target="_blank" rel="noopener" data-i18n="video.openDirect">Open in a new tab</a>
+        </p>
+
+        <details class="video-transcript">
+          <summary data-i18n="video.transcriptTitle">Read the summary instead</summary>
+          <ol>
+            <li data-i18n="video.t1">A production specialist registers a request for 20 TM of starter feed with a minimum of 18% crude protein.</li>
+            <li data-i18n="video.t2">The procurement analyst uploads three supplier quotations in PDF, each with a different structure and unit.</li>
+            <li data-i18n="video.t3">The automated analysis returns the detected data with a confidence level per field, leaving unresolved what it cannot determine.</li>
+            <li data-i18n="video.t4">The analyst corrects two fields, recording the reason, and confirms the quotations as verified.</li>
+            <li data-i18n="video.t5">Mandatory and weighted criteria are defined, and the simulation excludes the cheapest quotation for failing the protein requirement.</li>
+            <li data-i18n="video.t6">The purchase order is generated from the awarded quotation, linked back to the simulation, the quotation and the original request.</li>
+          </ol>
+        </details>
+
+        <div class="video-actions">
+          <a class="btn btn-primary" data-webapp href="#" data-i18n="cta.webapp">Open the web app</a>
+          <a class="btn btn-outline" href="#demo" data-i18n="cta.demo">Request a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Traceability, walkable -->
     <section class="section" id="trace">
       <div class="shell">
         <h2 data-i18n="trace.title">Six months later, the answer is still there</h2>
@@ -489,6 +529,7 @@ PAGO      CONTADO</pre>
         <ul>
           <li><a href="#simulator" data-i18n="nav.try">Try it</a></li>
           <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+          <li><a href="#video" data-i18n="nav.video">Video</a></li>
           <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
         </ul>
       </div>
@@ -503,7 +544,7 @@ PAGO      CONTADO</pre>
       <div class="footer-col">
         <h2 data-i18n="footer.access">Access</h2>
         <ul>
-          <li><a href="#" data-i18n="footer.signin">Sign in to the web app</a></li>
+          <li><a data-webapp href="#" data-i18n="footer.signin">Sign in to the web app</a></li>
           <li><a href="mailto:hola@smartquote.pe">hola@smartquote.pe</a></li>
           <li>
             <span class="footer-lang" role="group" data-i18n-aria-label="nav.language">

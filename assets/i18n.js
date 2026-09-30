@@ -8,11 +8,30 @@ const SQ_MESSAGES = {
     "nav.team": "For your team",
     "nav.pricing": "Pricing",
     "nav.faq": "FAQ",
+    "nav.video": "Video",
     "nav.language": "Language",
 
     "cta.demo": "Request a demo",
     "cta.try": "Try the comparison",
     "cta.talk": "Talk to us",
+    "cta.webapp": "Open the web app",
+
+    "video.title": "See the whole flow in three minutes",
+    "video.lead": "A walkthrough of a real purchase: three quotations uploaded, the detected data verified, the simulation run and the purchase order issued.",
+    "video.play": "Play the video",
+    "video.playAria": "Play the About the Product video, three minutes",
+    "video.meta": "About the product \u00b7 3 min \u00b7 subtitles available",
+    "video.title_frame": "SmartQuote \u2014 About the product",
+    "video.fallback": "If the player does not load, you can open the video directly.",
+    "video.openDirect": "Open in a new tab",
+    "video.pending": "The video is not published yet. It will be available here shortly.",
+    "video.transcriptTitle": "Read the summary instead",
+    "video.t1": "A production specialist registers a request for 20 TM of starter feed with a minimum of 18% crude protein.",
+    "video.t2": "The procurement analyst uploads three supplier quotations in PDF, each with a different structure and unit.",
+    "video.t3": "The automated analysis returns the detected data with a confidence level per field, leaving unresolved what it cannot determine.",
+    "video.t4": "The analyst corrects two fields, recording the reason, and confirms the quotations as verified.",
+    "video.t5": "Mandatory and weighted criteria are defined, and the simulation excludes the cheapest quotation for failing the protein requirement.",
+    "video.t6": "The purchase order is generated from the awarded quotation, linked back to the simulation, the quotation and the original request.",
 
     "hero.kicker": "Poultry supply procurement",
     "hero.l1": "Three quotations.",
@@ -166,11 +185,30 @@ const SQ_MESSAGES = {
     "nav.team": "Para tu equipo",
     "nav.pricing": "Planes",
     "nav.faq": "Preguntas",
+    "nav.video": "Video",
     "nav.language": "Idioma",
 
     "cta.demo": "Solicitar demostración",
     "cta.try": "Probar la comparación",
     "cta.talk": "Conversemos",
+    "cta.webapp": "Ingresar a la aplicaci\u00f3n web",
+
+    "video.title": "Mira el flujo completo en tres minutos",
+    "video.lead": "El recorrido de una compra real: tres cotizaciones cargadas, los datos detectados verificados, la simulaci\u00f3n ejecutada y la orden de compra emitida.",
+    "video.play": "Reproducir el video",
+    "video.playAria": "Reproducir el video Acerca del producto, tres minutos",
+    "video.meta": "Acerca del producto \u00b7 3 min \u00b7 con subt\u00edtulos",
+    "video.title_frame": "SmartQuote \u2014 Acerca del producto",
+    "video.fallback": "Si el reproductor no carga, puedes abrir el video directamente.",
+    "video.openDirect": "Abrir en una pesta\u00f1a nueva",
+    "video.pending": "El video a\u00fan no est\u00e1 publicado. Estar\u00e1 disponible aqu\u00ed en breve.",
+    "video.transcriptTitle": "Leer el resumen en su lugar",
+    "video.t1": "Un especialista de producci\u00f3n registra una solicitud de 20 TM de alimento de inicio con m\u00ednimo 18% de prote\u00edna cruda.",
+    "video.t2": "El analista de adquisiciones carga tres cotizaciones de proveedores en PDF, cada una con distinta estructura y unidad.",
+    "video.t3": "El an\u00e1lisis autom\u00e1tico devuelve los datos detectados con su nivel de confianza por campo, dejando como no resuelto lo que no puede determinar.",
+    "video.t4": "El analista corrige dos campos registrando el motivo y confirma las cotizaciones como verificadas.",
+    "video.t5": "Se definen los criterios obligatorios y ponderados, y la simulaci\u00f3n excluye a la cotizaci\u00f3n m\u00e1s barata por incumplir el requisito de prote\u00edna.",
+    "video.t6": "La orden de compra se genera desde la cotizaci\u00f3n adjudicada, enlazada a la simulaci\u00f3n, la cotizaci\u00f3n y la solicitud original.",
 
     "hero.kicker": "Abastecimiento avícola",
     "hero.l1": "Tres cotizaciones.",
@@ -319,8 +357,6 @@ const SQ_MESSAGES = {
 
 const SQ_LOCALE_TAGS = { en: "en-US", es: "es-419" };
 
-/* The three quotations used by the hero and the simulator.
-   Values already normalised to price per tonne. */
 const SQ_QUOTES = [
   { id: "avipiensos", name: "Avipiensos SAC",       price: 1980, days: 5, paymentDays: 30, protein: 18.5, paymentKey: "sim.payment30" },
   { id: "nutriaves",  name: "Nutriaves SRL",        price: 1890, days: 7, paymentDays: 45, protein: 18.2, paymentKey: "sim.payment45" },

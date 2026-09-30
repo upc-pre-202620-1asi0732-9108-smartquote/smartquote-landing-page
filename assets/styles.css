@@ -393,6 +393,79 @@ h3 { font-size: 18px; line-height: 28px; font-weight: 600; }
 .form-status { margin-top: var(--space-4); font-size: 14px; font-weight: 500; min-height: 20px; }
 .form-status.is-ok { color: #9BE7B4; }
 
+/* ---------- Web app link in the header ---------- */
+.nav-signin {
+  font-size: 14px; font-weight: 600; color: var(--neutral-0);
+  text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45);
+  padding-bottom: 2px; white-space: nowrap;
+}
+.nav-signin:hover { border-bottom-color: var(--neutral-0); }
+
+/* ---------- About the product video ---------- */
+.video-frame {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  background: var(--primary-700);
+  border: 1px solid var(--neutral-200); border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.video-frame iframe,
+.video-frame video { width: 100%; height: 100%; border: 0; display: block; }
+
+.video-play {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-3); cursor: pointer;
+  background: radial-gradient(circle at 50% 45%, var(--primary-600) 0%, var(--primary-700) 70%);
+  border: 0; color: var(--neutral-0); text-align: center; padding: var(--space-6);
+}
+.video-play:hover .video-play-icon { transform: scale(1.06); background: var(--neutral-0); }
+.video-play-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(255,255,255,.92);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.video-play-icon::after {
+  content: ""; margin-left: 6px;
+  border-style: solid; border-width: 13px 0 13px 22px;
+  border-color: transparent transparent transparent var(--primary-700);
+}
+.video-play-label { font-size: 18px; font-weight: 600; }
+.video-play-meta { font-size: 13px; color: rgba(255,255,255,.72); }
+
+.video-fallback {
+  margin-top: var(--space-3); font-size: 13px; color: var(--neutral-600);
+  display: flex; flex-wrap: wrap; gap: var(--space-2);
+}
+.video-fallback a { color: var(--primary-500); font-weight: 600; }
+
+.video-transcript {
+  margin-top: var(--space-6);
+  border: 1px solid var(--neutral-200); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6); background: var(--neutral-0);
+}
+.video-transcript summary {
+  cursor: pointer; font-size: 15px; font-weight: 600; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+}
+.video-transcript summary::-webkit-details-marker { display: none; }
+.video-transcript summary::after { content: "+"; color: var(--primary-500); font-size: 20px; line-height: 1; }
+.video-transcript[open] summary::after { content: "–"; }
+.video-transcript ol {
+  margin-top: var(--space-4); counter-reset: vt; display: grid; gap: var(--space-3);
+}
+.video-transcript li {
+  counter-increment: vt; position: relative; padding-left: var(--space-8);
+  font-size: 14px; line-height: 23px; color: var(--neutral-600);
+}
+.video-transcript li::before {
+  content: counter(vt, decimal-leading-zero); position: absolute; left: 0;
+  font-size: 12px; font-weight: 700; color: var(--primary-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.video-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--neutral-900); color: var(--neutral-0); padding: var(--space-16) 0 var(--space-8); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: var(--space-8); }
@@ -416,6 +489,12 @@ h3 { font-size: 18px; line-height: 28px; font-weight: 600; }
    Breakpoints (4.1.2)
    ========================================================= */
 @media (max-width: 1023px) {
+  /* Entre 768 y 1023 la barra lleva seis enlaces: se compacta para no desbordar.
+     El enlace al sistema web sigue visible en la sección del video y en el pie. */
+  .primary-nav { gap: var(--space-4); }
+  .primary-nav > a { font-size: 13px; }
+  .nav-signin { display: none; }
+
   h1 { font-size: 40px; line-height: 46px; }
   .shell { padding: 0 var(--space-6); }
   .hero-title { max-width: 24ch; }
@@ -452,6 +531,15 @@ h3 { font-size: 18px; line-height: 28px; font-weight: 600; }
   .primary-nav.is-open { display: flex; }
   .primary-nav > a { font-size: 16px; }
   .lang-switch { align-self: flex-start; }
+  /* En el menú desplegable el enlace al sistema web se lee como una opción más.
+     Se revierte el display:none de la media query de 1023px, que de lo contrario
+     lo deja oculto también aquí. */
+  .nav-signin { display: inline-block; align-self: flex-start; font-size: 16px; }
+  .video-play-icon { width: 56px; height: 56px; }
+  .video-play-icon::after { border-width: 10px 0 10px 17px; }
+  .video-play-label { font-size: 16px; }
+  .video-play-meta { font-size: 12px; }
+  .video-actions .btn { width: 100%; }
   .site-header { position: relative; }
 
   /* The table scrolls sideways instead of dropping the state labels, which

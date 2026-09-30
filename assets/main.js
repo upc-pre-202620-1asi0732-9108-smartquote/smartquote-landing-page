@@ -5,6 +5,9 @@
   var DEFAULT_LANG = "en";
   var currentLang = DEFAULT_LANG;
 
+  var SQ_WEBAPP_URL = "https://agreeable-bush-0f1889d10.5.azurestaticapps.net/";
+  var SQ_VIDEO_ID = "LdcyPcPV8VY";
+
   /* ---------------- i18n ---------------- */
 
   function t(key, vars) {
@@ -44,6 +47,7 @@
     renderChain();
     filterFaq();
     clearFormMessages();
+    renderVideo();
   }
 
   function initialLanguage() {
@@ -110,9 +114,7 @@
     setStage("raw");
   }
 
-  /* ---------------- Simulator ----------------
-     Same rule the platform applies: mandatory criteria exclude first,
-     then the remaining quotations are scored on normalised weights. */
+  /* ---------------- Simulator ----------------*/
 
   var protRule = document.getElementById("protRule");
   var protHint = document.getElementById("protHint");
@@ -355,7 +357,82 @@
     });
   }
 
+  /* ---------------- Enlace al sistema web ----------------
+     Un solo punto de verdad: todos los elementos con data-webapp reciben la
+     misma URL. Se abren en una pestaña nueva porque el visitante sale de la
+     landing hacia un producto distinto. */
+
+  function applyWebAppLinks() {
+    var url = (SQ_WEBAPP_URL || "").trim();
+    document.querySelectorAll("[data-webapp]").forEach(function (node) {
+      if (!url) { node.setAttribute("aria-disabled", "true"); return; }
+      node.setAttribute("href", url);
+      node.setAttribute("target", "_blank");
+      node.setAttribute("rel", "noopener");
+    });
+  }
+
+  /* ---------------- Video About the Product ----------------
+     El reproductor se carga solo cuando el visitante lo pide. Así la landing no
+     descarga el reproductor de YouTube en cada visita y el control es un botón
+     real, operable con teclado y anunciable por un lector de pantalla. */
+
+  var videoFrame = document.getElementById("videoFrame");
+  var videoPlay = document.getElementById("videoPlay");
+  var videoFallback = document.getElementById("videoFallback");
+  var videoDirect = document.getElementById("videoDirect");
+  var videoLoaded = false;
+
+  function videoWatchUrl() {
+    return "https://www.youtube.com/watch?v=" + SQ_VIDEO_ID;
+  }
+
+  function loadVideo() {
+    if (videoLoaded || !SQ_VIDEO_ID) { return; }
+    videoLoaded = true;
+
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + SQ_VIDEO_ID +
+                 "?autoplay=1&rel=0&cc_load_policy=1&hl=" + currentLang;
+    iframe.title = t("video.title_frame");
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.setAttribute("loading", "lazy");
+
+    videoFrame.innerHTML = "";
+    videoFrame.appendChild(iframe);
+    iframe.focus();
+  }
+
+  function renderVideo() {
+    if (!videoFrame) { return; }
+
+    if (!SQ_VIDEO_ID) {
+      if (videoPlay) {
+        videoPlay.disabled = true;
+        var label = videoPlay.querySelector(".video-play-label");
+        var meta = videoPlay.querySelector(".video-play-meta");
+        if (label) { label.textContent = t("video.pending"); }
+        if (meta) { meta.hidden = true; }
+      }
+      if (videoFallback) { videoFallback.hidden = true; }
+      return;
+    }
+
+    if (videoFallback) { videoFallback.hidden = false; }
+    if (videoDirect) { videoDirect.setAttribute("href", videoWatchUrl()); }
+    if (videoLoaded) {
+      var frame = videoFrame.querySelector("iframe");
+      if (frame) { frame.title = t("video.title_frame"); }
+    }
+  }
+
+  if (videoPlay) {
+    videoPlay.addEventListener("click", loadVideo);
+  }
+
   /* ---------------- Boot ---------------- */
 
+  applyWebAppLinks();
   applyLanguage(initialLanguage());
 })();

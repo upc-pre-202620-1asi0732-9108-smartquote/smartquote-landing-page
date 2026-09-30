@@ -114,9 +114,7 @@
     setStage("raw");
   }
 
-  /* ---------------- Simulator ----------------
-     Same rule the platform applies: mandatory criteria exclude first,
-     then the remaining quotations are scored on normalised weights. */
+  /* ---------------- Simulator ----------------*/
 
   var protRule = document.getElementById("protRule");
   var protHint = document.getElementById("protHint");
